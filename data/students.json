@@ -1,0 +1,52 @@
+{
+  "students": [
+    {
+      "id": "student-001",
+      "name": "James Anthony",
+      "status": "active",
+      "rate": 150,
+      "rateUnit": "hourly",
+      "notes": ""
+    },
+    {
+      "id": "student-002",
+      "name": "Timothy Mullen",
+      "status": "active",
+      "rate": 150,
+      "rateUnit": "hourly",
+      "notes": ""
+    },
+    {
+      "id": "student-003",
+      "name": "Jack Marino",
+      "status": "active",
+      "rate": 150,
+      "rateUnit": "hourly",
+      "notes": ""
+    },
+    {
+      "id": "student-004",
+      "name": "Edward Eighmey",
+      "status": "active",
+      "rate": 150,
+      "rateUnit": "hourly",
+      "notes": ""
+    },
+    {
+      "id": "student-005",
+      "name": "William Eighmey",
+      "status": "active",
+      "rate": 150,
+      "rateUnit": "hourly",
+      "notes": ""
+    },
+    {
+      "id": "student-006",
+      "name": "Madelyn Stojanovic",
+      "status": "active",
+      "rate": 150,
+      "rateUnit": "hourly",
+      "notes": ""
+    }
+  ]
+}
