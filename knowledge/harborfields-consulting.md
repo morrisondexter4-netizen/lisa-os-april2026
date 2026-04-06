@@ -31,7 +31,7 @@ Each vertical is invoiced separately every month:
 
 ## Day Tracking
 - Google Sheet (source of truth): https://docs.google.com/spreadsheets/d/1BInv_snIxbOpSEAHjxxuf0FHw_213pWSIh1o2bDXtok/edit
-- Shared with: lisa@motive-os.com
+- Owned by: lisabwolf14@gmail.com
 - Local cache/fallback: data/consulting-days.json
 - Each entry records: date, vertical (literacy/mtss/sped), hours/days, notes
 

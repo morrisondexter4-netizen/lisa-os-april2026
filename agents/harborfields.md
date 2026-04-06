@@ -8,7 +8,7 @@ Manages Lisa's consulting work for Harborfields school district. Handles day tra
 
 ## Data Sources
 - **Google Sheet (source of truth)**: https://docs.google.com/spreadsheets/d/1BInv_snIxbOpSEAHjxxuf0FHw_213pWSIh1o2bDXtok/edit
-  - Shared with lisa@motive-os.com — read directly when available
+  - Owned by lisabwolf14@gmail.com — read directly via Gmail MCP
 - **data/consulting-days.json** — local cache/fallback when the Sheet isn't accessible
   - When logging new days, update both the Sheet and the local cache
 

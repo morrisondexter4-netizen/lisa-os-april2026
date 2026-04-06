@@ -8,14 +8,13 @@ INVOICES     = lisa-os/data/invoices.json
 SIGNUP       = lisa-os/data/signup-sheet.json
 LOG          = lisa-os/logs/outputs.md
 
-## Google Workspace (Motive Gmail)
-The agent operates from a dedicated Google Workspace account:
-- Motive Gmail: lisa@motive-os.com
-- Lisa's personal emails forward here so the agent has full visibility:
-  - lisabwolf14@gmail.com (Brightlings / personal)
+## Gmail (Personal Hub)
+Claude connects directly to Lisa's personal Gmail via Gmail MCP:
+- Central hub: lisabwolf14@gmail.com
+- Lisa's other emails forward here:
   - lisa.wolf2@fora.travel (Quintessential Travel)
   - wolfl@harborfieldscsd.org (Harborfields district)
-- Google Sheets and Docs shared with lisa@motive-os.com for live data access
+- Google Sheets and Docs are owned by this account — no sharing needed
 
 ### Key Shared Documents
 - Harborfields consulting days: https://docs.google.com/spreadsheets/d/1BInv_snIxbOpSEAHjxxuf0FHw_213pWSIh1o2bDXtok/edit

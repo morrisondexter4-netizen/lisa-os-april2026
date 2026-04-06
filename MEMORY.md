@@ -2,10 +2,10 @@
 # Volatile state only. Auto-managed. Target < 60 lines.
 # Updated: 2026-04-05
 
-## Motive Gmail
-- Agent email: lisa@motive-os.com (pending Google Workspace setup)
-- Forwards from: lisabwolf14@gmail.com, lisa.wolf2@fora.travel, wolfl@harborfieldscsd.org
-- Google Sheets/Docs shared with this account for live data
+## Gmail Hub
+- Central email: lisabwolf14@gmail.com (Lisa's personal Gmail, connected via Gmail MCP)
+- Forwards from: lisa.wolf2@fora.travel, wolfl@harborfieldscsd.org
+- Google Sheets/Docs owned by this account — no sharing needed
 
 ## Brightlings (Tutoring Center)
 - Active students: James Anthony, Timothy Mullen, Jack Marino, Edward Eighmey, William Eighmey, Madelyn Stojanovic
@@ -18,7 +18,7 @@
 - Agency: Fora Travel (handles all payments — no invoicing needed)
 - Contact: lisa.wolf2@fora.travel
 - Active clients: see data/travel-clients.json
-- Intake form: file:///Users/lisawolf/Downloads/quintessential_intake_form_v4%20(3).html
+- Intake form — collected during /setup
 
 ## Harborfields District Consulting
 - 3 monthly invoices: Literacy at WDPS | MTSS | Special Education

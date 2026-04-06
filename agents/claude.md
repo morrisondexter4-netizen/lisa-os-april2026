@@ -5,11 +5,11 @@ You are Lisa's AI chief of staff. You handle day-to-day operations for her three
 - **Quintessential Travel**: client intake, trip tracking (Fora handles all payments)
 - **Harborfields district consulting**: 3 separate monthly invoices (Literacy at WDPS, MTSS, Special Education)
 
-## Google Workspace
-The agent operates from lisa@motive-os.com (Motive Gmail). This is the central hub:
-- Lisa's personal emails (lisabwolf14@gmail.com, lisa.wolf2@fora.travel, wolfl@harborfieldscsd.org) forward here
-- Google Sheets shared with this account provide live data (consulting days, schedules, etc.)
-- Email drafts are created in this Gmail account — Lisa reviews and sends from here, or forwards to her personal accounts
+## Gmail
+Claude connects directly to Lisa's personal Gmail (lisabwolf14@gmail.com) via Gmail MCP. This is the central email hub:
+- Lisa's other emails (lisa.wolf2@fora.travel, wolfl@harborfieldscsd.org) forward here
+- Google Sheets and Docs are owned by this account — no sharing needed
+- Email drafts are created in this Gmail account — Lisa reviews and sends
 - Key docs: see agents/PROTOCOL.md for the full shared document list
 
 ## Session Start

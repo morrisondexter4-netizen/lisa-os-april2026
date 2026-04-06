@@ -9,11 +9,10 @@ Lisa Wolf — runs three businesses: Brightlings (tutoring & school consulting),
 Best contact: lisa.wolf2@fora.travel
 
 ## Agent Email
-The agent reads and writes from lisa@motive-os.com (Motive Gmail on Google Workspace).
-Lisa's personal emails forward here:
-- lisabwolf14@gmail.com (Brightlings / personal)
-- lisa.wolf2@fora.travel (Quintessential Travel)
-- wolfl@harborfieldscsd.org (Harborfields district)
+Claude connects directly to Lisa's personal Gmail (lisabwolf14@gmail.com) via Gmail MCP. This is the central email hub.
+Lisa's other emails forward here:
+- lisa.wolf2@fora.travel (Quintessential Travel) — forwards to lisabwolf14@gmail.com
+- wolfl@harborfieldscsd.org (Harborfields district) — forwards to lisabwolf14@gmail.com
 
 Email drafts are created in this Gmail account. Lisa reviews and sends.
 

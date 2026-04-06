@@ -31,7 +31,7 @@ lisabwolf14@gmail.com
 Stripe
 
 ## Student Billing Hub
-file:///Users/lisawolf/Downloads/brightlings-billing-hub%20(4).html
+Billing hub form — collected during /setup
 
 ## Notes
 [ANY OTHER CONTEXT — e.g., in-person vs. online, age groups served, intake process, etc.]

@@ -17,7 +17,7 @@ Leisure travel, group travel, cruises, international, domestic, honeymoons — g
 Fora agency handles all payments. Lisa does not invoice travel clients directly. There are no recurring invoice clients for the travel side.
 
 ## Intake Form
-file:///Users/lisawolf/Downloads/quintessential_intake_form_v4%20(3).html
+Intake form — collected during /setup
 
 ## Email Organization
 Scanning emails and organizing by location or client.
