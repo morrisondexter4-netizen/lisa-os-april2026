@@ -1,20 +1,27 @@
-# Last Session — 2026-04-05
+# Last Session -- 2026-04-06
 <!-- Max 20 lines. Overwrite every session end. -->
 
 ## Where We Left Off
-LisaOS v1.2 — knowledge files populated with real data, Gmail integration wired across all agents, Google Sheets/Docs references added. System ready for onboarding once email forwarding is set up.
+LisaOS v2.0 overhaul complete. All 9 phases executed: knowledge files fleshed out, students.json schema updated, CLAUDE.md rewritten, 9 slash command skills built, all agents improved, hooks rewritten, MEMORY.md updated, stale files deleted, PROTOCOL.md updated.
 
 ## Done This Session
-- Populated harborfields-consulting.md: $150/hr rate, PO formats, district email, Google Sheet link
-- Cleaned up travel-agency.md: removed recurring invoice section (Fora handles payments), added services list
-- Updated tutoring-center.md: teacher sign-up Google Doc link, cleaned service descriptions
-- Wired Gmail (lisabwolf14@gmail.com) into CLAUDE.md, agents/claude.md, agents/PROTOCOL.md
-- Updated harborfields.md to use Google Sheet as source of truth (JSON as fallback)
-- Updated signup-sheet.md to reference teacher sign-up Google Doc as source
-- Simplified travel-invoices.md (Fora handles all payments, agent is placeholder)
-- Cleaned data/travel-clients.json (empty array), added source-of-truth note to consulting-days.json
-- Rewrote setup.sh with new onboarding steps (Gmail MCP connection, forwarding, doc sharing)
+- Fleshed out all 5 knowledge files (tutoring, travel, harborfields, troubleshooting, invoice-formats)
+- Added subjects, sessionsOwed, lastInvoiced fields to students.json
+- Rewrote CLAUDE.md (warm, under 80 lines, all commands listed)
+- Built 9 skills: /setup, /invoice, /invoice-harborfields, /email, /recap, /clients, /students, /schedule, /help
+- Rewrote agents/claude.md with skill routing, error handling, troubleshooting
+- Deleted stale agents: lisa.md, travel-invoices.md
+- Improved all remaining agents with skill routing and error handling
+- Rewrote hooks (warm greetings, no technical output)
+- Updated PROTOCOL.md with all new slash commands
+- Deleted setup.sh (replaced by /setup skill)
 
 ## Blockers / Flags
-- Email forwarding: Fora and district emails need to be forwarded to lisabwolf14@gmail.com
-- Still needed from Lisa: district contact name, per-student subjects, billing contacts per vertical
+- MCPs not yet connected on Lisa's machine (Gmail, Calendar)
+- Student data still needs: subjects, parentContact, sessionsOwed (via /setup)
+- Harborfields billing contacts still TBD (via /setup)
+
+## Next Steps (exact, in order)
+1. Run /setup on Lisa's machine to connect MCPs and fill remaining data
+2. Test each slash command end-to-end
+3. Verify Gmail MCP creates drafts correctly

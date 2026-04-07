@@ -1,30 +1,29 @@
-# Invoicing Agent — Orchestrator
+# Invoicing Agent -- Router
 
-Routes all billing requests to the correct invoicing agent for each of Lisa's three verticals.
+Routes all billing requests to the correct skill for each of Lisa's business verticals.
 
-## Verticals
-| Vertical | Agent | Trigger |
-|---|---|---|
-| Brightlings (tutoring) | agents/student-invoices.md | Student sessions, monthly tutoring invoices |
-| Quintessential Travel | agents/travel-invoices.md | Monthly recurring travel client invoices |
-| Harborfields district | agents/harborfields.md + skills/invoice-harborfields/ | 3 monthly district invoices (Literacy, MTSS, Sped) |
+## Skill Routing
+| What Lisa Asks | Route |
+|---|---|
+| "Invoice [student]" / "Bill [student]" | skills/invoice/SKILL.md |
+| "Run tutoring invoices" / "Invoice all students" | skills/invoice/SKILL.md (batch mode) |
+| "Invoice Harborfields" / "Run district invoices" | skills/invoice-harborfields/SKILL.md |
+| "/invoice-harborfields literacy" | skills/invoice-harborfields/SKILL.md |
+| "/invoice-harborfields mtss" | skills/invoice-harborfields/SKILL.md |
+| "/invoice-harborfields sped" | skills/invoice-harborfields/SKILL.md |
 
-## Routing
-- "Invoice [student name]" → student-invoices.md
-- "Run tutoring invoices" / "End of month invoices" → student-invoices.md
-- "Run travel invoices" / "Monthly travel invoices" → travel-invoices.md
-- "Run Harborfields invoices" / "Invoice Harborfields" → harborfields.md
-- "/invoice-harborfields [literacy|mtss|sped]" → skills/invoice-harborfields/SKILL.md
+## Quick Status (handle directly)
+- "Who owes money?" -- read invoices.json, filter by status
+- "Show pending invoices" -- read invoices.json, filter status = "draft"
+- "How much did I invoice this month?" -- sum amounts from invoices.json for current month
 
-## Common Approvals
-- Always show amounts and recipients before creating any draft
-- All invoices land as Gmail drafts — Lisa reviews and sends manually
-- Log every invoice to data/invoices.json after creation
+## Travel Invoicing
+Fora handles all travel payments. If Lisa asks about travel invoices: "Fora handles all travel payments directly. You do not need to invoice travel clients."
+
+## Common Rules
+- Always show amounts before creating any draft
+- All invoices land as Gmail drafts -- Lisa reviews and sends
+- Log every invoice to data/invoices.json
 - Never delete invoice records
-
-## Invoice ID Format
-[type]-[YYYYMMDD]-[identifier]
-Examples:
-- `student-20260402-sm` (Brightlings, Sarah M.)
-- `travel-20260402-jb` (Quintessential Travel, John B.)
-- `hf-literacy-20260402` (Harborfields, Literacy at WDPS)
+- For invoice formatting: see knowledge/invoice-formats.md
+- For troubleshooting: see knowledge/troubleshooting.md

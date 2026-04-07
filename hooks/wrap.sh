@@ -1,27 +1,13 @@
 #!/bin/bash
 # LisaOS Wrap Hook
-# Runs at session end. Prompts the 5-step wrap protocol.
+# Runs at session end. Friendly reminder for Claude to save everything.
 
 echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  LisaOS — Session Wrap Protocol"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Wrapping up! Let me save everything from this session."
 echo ""
-echo "5 steps to close out:"
+echo "  1. Updating notes for any clients or students we worked on"
+echo "  2. Saving a record of what we did today"
+echo "  3. Logging any changes"
 echo ""
-echo "  1. Update handoff files for any clients touched this session"
-echo "     → handoff/[client-slug].md"
-echo ""
-echo "  2. Write session/last-session.md (max 20 lines)"
-echo "     → What was touched, exact state, next steps"
-echo ""
-echo "  3. Append to logs/outputs.md"
-echo "     → [YYYY-MM-DD HH:MM] summary of what was done"
-echo ""
-echo "  4. Update MEMORY.md if volatile state changed"
-echo "     → Pending invoices, sign-ups, client statuses"
-echo ""
-echo "  5. Report: 'Session wrapped. Here's what changed: [list]'"
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "See you next time, Lisa!"
 echo ""

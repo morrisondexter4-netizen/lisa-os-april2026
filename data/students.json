@@ -7,6 +7,9 @@
       "rate": 150,
       "rateUnit": "hourly",
       "parentContact": null,
+      "subjects": [],
+      "sessionsOwed": 0,
+      "lastInvoiced": null,
       "notes": ""
     },
     {
@@ -16,6 +19,9 @@
       "rate": 150,
       "rateUnit": "hourly",
       "parentContact": null,
+      "subjects": [],
+      "sessionsOwed": 0,
+      "lastInvoiced": null,
       "notes": ""
     },
     {
@@ -25,6 +31,9 @@
       "rate": 150,
       "rateUnit": "hourly",
       "parentContact": null,
+      "subjects": [],
+      "sessionsOwed": 0,
+      "lastInvoiced": null,
       "notes": ""
     },
     {
@@ -34,6 +43,9 @@
       "rate": 150,
       "rateUnit": "hourly",
       "parentContact": null,
+      "subjects": [],
+      "sessionsOwed": 0,
+      "lastInvoiced": null,
       "notes": ""
     },
     {
@@ -43,6 +55,9 @@
       "rate": 150,
       "rateUnit": "hourly",
       "parentContact": null,
+      "subjects": [],
+      "sessionsOwed": 0,
+      "lastInvoiced": null,
       "notes": ""
     },
     {
@@ -52,6 +67,9 @@
       "rate": 150,
       "rateUnit": "hourly",
       "parentContact": null,
+      "subjects": [],
+      "sessionsOwed": 0,
+      "lastInvoiced": null,
       "notes": ""
     }
   ]

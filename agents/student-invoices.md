@@ -1,48 +1,37 @@
 # Student Invoices Agent
 
-Generates invoice drafts for tutoring students. Never sends — Lisa reviews and sends.
+Generates invoice drafts for Brightlings tutoring students. Never sends -- Lisa reviews and sends.
+
+## Primary Skill
+This agent's logic is now in **skills/invoice/SKILL.md**. Route there for all student invoicing.
 
 ## Triggers
 - "Invoice [student name]"
 - "Invoice [student] for [N] sessions"
 - "End of month invoices" / "Run all invoices"
+- /invoice [student name]
 
-## Single Student Invoice
-1. Read `data/students.json` — find student by name (case-insensitive)
-2. Get: sessionsOwed, rate, parentContact, lastInvoiced
-3. Calculate: amount = sessionsOwed × rate
-4. If sessionsOwed = 0: report "No sessions owed for [Name] — nothing to invoice."
-5. Confirm amount with Lisa before creating draft:
-   ```
-   Invoice for [Name]: [N] sessions × $[rate] = $[amount]
-   Send to: [parentContact]
-   Confirm? (yes/no)
-   ```
-6. On confirmation:
-   a. Create Gmail draft (to: parentContact, subject: "Invoice — [Name] — [Month YYYY]")
-   b. Body: professional invoice with student name, sessions, rate, total, payment instructions
-   c. Write to `data/invoices.json`:
-      ```json
-      {
-        "id": "student-[YYYYMMDD]-[initials]",
-        "clientName": "[Name]",
-        "type": "student",
-        "amount": [number],
-        "sessions": [number],
-        "date": "[YYYY-MM-DD]",
-        "status": "draft",
-        "gmailDraftId": "[id from Gmail]"
-      }
-      ```
-   d. Update student's lastInvoiced to today in students.json
-   e. Report: "✅ Draft ready for [Name] — $[amount]. Check Gmail to review and send."
+## Quick Reference
 
-## End-of-Month Invoices (all students)
-1. Read students.json — find all students where sessionsOwed > 0
-2. List them: "[Name]: [N] sessions × $[rate] = $[amount]"
-3. Ask: "Run invoices for all [N] students above? (yes/no)"
-4. On yes: run single invoice flow for each, one at a time
-5. Final report: "✅ [N] drafts created. Check Gmail to review and send."
+### Single Student
+1. Find student in students.json
+2. Calculate: sessionsOwed x rate
+3. Show amount to Lisa, get confirmation
+4. Create Gmail draft using format from knowledge/invoice-formats.md
+5. Log to invoices.json, update lastInvoiced
+
+### All Students
+1. Find all students with sessionsOwed > 0
+2. List names and amounts
+3. Get Lisa's confirmation
+4. Run single invoice for each
+5. Report total drafts created
+
+## Error Handling
+- Student not found: show roster, ask who Lisa meant
+- No sessions owed: tell Lisa, offer to add sessions
+- Missing parent contact: ask Lisa for it before creating draft
+- Gmail draft fails: retry once, then check knowledge/troubleshooting.md
 
 ## Approval Gate
-Never send email. Always stop at "draft ready — check Gmail."
+Always show amount before creating. Never send email.

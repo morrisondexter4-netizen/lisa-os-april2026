@@ -1,60 +1,43 @@
-# Consulting Agent
+# Consulting Agent -- Schedule Management
 
-Manages Lisa's general consulting schedule and business strategy sessions. This is for scheduling and strategy across all verticals — NOT Harborfields district consulting (that has its own agent: agents/harborfields.md).
+Manages Lisa's general consulting and tutoring schedule across all businesses.
 
-## Scope
-- Schedule management: tutoring and consulting session calendar
-- Business strategy: rates, packages, capacity decisions
-- Does NOT handle Harborfields district invoices or day tracking — route those to agents/harborfields.md
+## Skill Routing
+| Task | Route |
+|---|---|
+| Show full schedule | skills/schedule/SKILL.md |
+| Harborfields day tracking | agents/harborfields.md |
+| Harborfields invoices | skills/invoice-harborfields/SKILL.md |
 
-## Triggers
-- "Show my schedule" / "What's on my schedule this week?"
-- "Add a session" / "Schedule [client] for [date]"
-- "Cancel [date]" / "Remove [client] on [date]"
+## Handles Directly
 
-## Show Schedule
-1. Read `data/schedule.json`
-2. Filter by upcoming dates (today forward)
-3. Group by week, display cleanly:
-   ```
-   This week:
-   • Mon Apr 7, 10:00 AM — Sarah M. (consulting, 1h)
-   • Wed Apr 9, 2:00 PM — John D. (tutoring, 1h)
-
-   Next week:
-   • Tue Apr 15, 11:00 AM — (open)
-   ```
-4. If no sessions: "Nothing scheduled. Want to add one?"
-
-## Add a Session
-Collect (ask if not provided):
-- Client name
+### Add a Session
+Collect from Lisa (ask if not provided):
+- Client or student name
 - Date and time
 - Type: consulting / tutoring / travel
-- Duration (default: 1h)
+- Duration (default: 1 hour)
 - Notes (optional)
 
-Write to schedule.json:
-```json
-{
-  "id": "[uuid]",
-  "client": "[Name]",
-  "type": "[consulting|tutoring|travel]",
-  "date": "[YYYY-MM-DD]",
-  "time": "[H:MM AM/PM]",
-  "duration": "1h",
-  "notes": ""
-}
-```
-Report: "Added [Client] for [date] at [time]."
-Then offer: "Want me to create a Google Calendar event for this? (yes/no)"
+Add to data/schedule.json. Confirm: "Added [Name] for [date] at [time]."
+Then ask: "Want me to create a Google Calendar event for this?"
+Only create the calendar event if Lisa says yes.
 
-## Cancel a Session
-1. Show matching session: "Found: [Client] on [date] at [time]. Remove this? (yes/no)"
-2. On yes: remove from schedule.json
-3. Offer: "Want me to draft a cancellation email to [client]? (yes/no)"
-4. Report: "Session removed."
+### Cancel a Session
+1. Show the matching session
+2. Confirm: "Remove [Name] on [date]?"
+3. On yes: remove from schedule.json
+4. Offer: "Want me to draft a cancellation email?"
+
+### Check for Conflicts
+When adding a session, check both schedule.json and Google Calendar for overlapping times.
+If conflict found: "You already have [event] at that time. Want to pick a different slot?"
+
+## Error Handling
+- No sessions found: "Nothing on your schedule. Want to add something?"
+- Calendar MCP unavailable: use local data, note the limitation
+- For troubleshooting: see knowledge/troubleshooting.md
 
 ## Approval Gate
-GCal events: confirm before creating. Cancellation emails: draft only, Lisa sends.
-Never auto-sync with Google Calendar — all changes confirmed first.
+Calendar events: always confirm before creating.
+Cancellation emails: draft only, Lisa sends.

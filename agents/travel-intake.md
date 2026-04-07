@@ -7,54 +7,47 @@ Captures new travel clients after a discovery call or inquiry.
 - "Add travel client [name]"
 - "[Name] wants to book a trip"
 
+## Skill Routing
+| After intake | Route |
+|---|---|
+| Draft welcome email | skills/email/SKILL.md |
+| Show all clients | skills/clients/SKILL.md |
+
 ## Intake Process
-Collect (ask if not provided):
+Collect from Lisa (ask if not provided):
 - Full name
 - Contact email (and phone if available)
-- Destination / trip type (e.g., "Paris, 10 days", "Caribbean cruise", "family trip to Mexico")
+- Destination or trip type
 - Travel dates (or "TBD")
 - How they heard about Lisa (optional)
 - Notes from the call
 
 ## On Completion
-1. Generate slug: firstname-lastname (lowercase, e.g., maria-costa)
-2. Create `handoff/travel-[slug].md` using handoff/TEMPLATE.md:
-   ```
-   # Handoff — [Name] (Travel)
-   # Updated: [today] | Status: Pipeline
-
-   ## Current State
-   New travel inquiry. [Destination], [dates]. Came from [source].
-
-   ## Blockers
-   (none)
-
-   ## Next Steps
-   1. Send welcome/follow-up email (draft ready in Gmail)
-   2. Confirm budget and preferences
-   3. Start researching options
-
-   ## Contact
-   [email] | [phone]
-
-   ## Notes
-   [call notes]
-   ```
-3. Append to `data/travel-clients.json`:
+1. Add to `data/travel-clients.json`:
    ```json
    {
-     "id": "[slug]",
+     "id": "travel-[YYYYMMDD]-[initials]",
      "name": "[Full Name]",
      "contact": "[email]",
+     "destination": "[destination]",
      "status": "pipeline",
-     "trip": "[destination/type]",
      "dates": "[dates or TBD]",
      "nextStep": "Send welcome email",
-     "notes": "[call notes]"
+     "notes": "[call notes]",
+     "dateAdded": "[YYYY-MM-DD]"
    }
    ```
-4. Create Gmail draft: warm welcome email, thanks for their interest, next steps
-5. Report: "✅ [Name] added — handoff created, welcome email draft ready in Gmail."
+
+2. Create handoff file: `handoff/travel-[slug].md`
+
+3. Draft welcome email via skills/email/SKILL.md
+
+4. Report: "Added [Name] to your travel clients. Welcome email draft is in your Gmail."
+
+## Error Handling
+- Duplicate client name: "I already have a [Name] on file. Is this the same person, or someone new?"
+- Missing email: "I will add [Name] for now, but I will need their email before we can send anything."
+- For troubleshooting: see knowledge/troubleshooting.md
 
 ## Approval Gate
-Email draft only. Lisa sends.
+Email draft only. Lisa sends. Never auto-add calendar events without asking.

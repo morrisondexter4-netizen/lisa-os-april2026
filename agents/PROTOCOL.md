@@ -1,47 +1,67 @@
-# LisaOS Agent Protocol — Shared Reference
+# LisaOS Agent Protocol -- Shared Reference
+# Updated: 2026-04-06
 
-## Paths
-STUDENTS     = lisa-os/data/students.json
-TRAVEL       = lisa-os/data/travel-clients.json
-SCHEDULE     = lisa-os/data/schedule.json
-INVOICES     = lisa-os/data/invoices.json
-SIGNUP       = lisa-os/data/signup-sheet.json
-LOG          = lisa-os/logs/outputs.md
+## Data Paths
+STUDENTS     = data/students.json
+TRAVEL       = data/travel-clients.json
+SCHEDULE     = data/schedule.json
+INVOICES     = data/invoices.json
+SIGNUP       = data/signup-sheet.json
+CONSULTING   = data/consulting-days.json
+LOG          = logs/outputs.md
 
-## Gmail (Personal Hub)
-Claude connects directly to Lisa's personal Gmail via Gmail MCP:
-- Central hub: lisabwolf14@gmail.com
-- Lisa's other emails forward here:
-  - lisa.wolf2@fora.travel (Quintessential Travel)
-  - wolfl@harborfieldscsd.org (Harborfields district)
-- Google Sheets and Docs are owned by this account — no sharing needed
+## Gmail Hub
+Central email: lisabwolf14@gmail.com (connected via Gmail MCP)
+Forwards from:
+- lisa.wolf2@fora.travel (Quintessential Travel)
+- wolfl@harborfieldscsd.org (Harborfields district)
+All drafts created here. Lisa reviews and sends.
 
-### Key Shared Documents
+## Key Shared Documents
 - Harborfields consulting days: https://docs.google.com/spreadsheets/d/1BInv_snIxbOpSEAHjxxuf0FHw_213pWSIh1o2bDXtok/edit
 - Teacher sign-up requests: https://docs.google.com/document/d/1z5Da56i3BQfM1QjR5C0y4PzjadWtFBmLwiQ9FLRNspY/edit
-- (More docs will be added as Lisa shares them)
 
-## Approval Gates — NEVER skip
+## Slash Commands
+| Command | Skill File | Description |
+|---|---|---|
+| /setup | skills/setup/SKILL.md | First-time onboarding and MCP connection |
+| /invoice [name] | skills/invoice/SKILL.md | Brightlings student invoice |
+| /invoice-harborfields [vertical] | skills/invoice-harborfields/SKILL.md | Harborfields district invoice |
+| /email | skills/email/SKILL.md | Draft any email |
+| /recap | skills/recap/SKILL.md | Weekly summary |
+| /clients | skills/clients/SKILL.md | Travel clients by status |
+| /students | skills/students/SKILL.md | Brightlings student roster |
+| /schedule | skills/schedule/SKILL.md | Upcoming schedule + calendar |
+| /help | skills/help/SKILL.md | All commands and examples |
+
+## Approval Gates -- NEVER skip
 - Email: create Gmail drafts only. Never send. Report draft is ready.
 - Calendar: confirm before creating or editing any Google Calendar event.
 - Invoices: show Lisa the draft + amount. Wait for explicit approval.
-- Client/student records: never delete without explicit "delete [name]" instruction.
+- Client/student records: never delete without explicit instruction.
 
 ## Invoice ID Format
-Use timestamp-based ID: [type]-[YYYYMMDD]-[initials]
-Example: student-20260330-sm (Sarah M.), travel-20260330-jb (John B.)
+[type]-[YYYYMMDD]-[identifier]
+Examples:
+- student-20260406-ja (James Anthony)
+- hf-literacy-20260406 (Harborfields Literacy)
+
+## Invoice Formats
+See knowledge/invoice-formats.md for exact templates.
+
+## Troubleshooting
+See knowledge/troubleshooting.md for error handling and self-healing.
 
 ## Logging (outputs.md)
-[YYYY-MM-DD HH:MM] [agent] summary of what was done
+[YYYY-MM-DD HH:MM] [agent/skill] summary of what was done
 
 ## Handoff File Per Client
 File: handoff/[client-slug].md
-Slug format: firstname-lastname (e.g., sarah-miller, maria-costa)
-Overwrite on each update. Use handoff/TEMPLATE.md.
+Use handoff/TEMPLATE.md. Overwrite on each update.
 
 ## Session Wrap (5 steps)
-1. Update handoff files for any clients touched this session
+1. Update handoff files for any clients touched
 2. Write session/last-session.md (max 20 lines)
 3. Append summary to logs/outputs.md
-4. Update MEMORY.md if any volatile state changed
-5. Report: "Session wrapped. Here's what changed: [list]"
+4. Update MEMORY.md if volatile state changed
+5. Report to Lisa: brief summary of what changed
