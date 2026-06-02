@@ -31,6 +31,7 @@ Lisa's other emails forward here:
 | /students | Shows Brightlings students with rates and sessions owed |
 | /schedule | Shows upcoming schedule from local data and Google Calendar |
 | /help | Lists all commands with examples and tips |
+| /update | Updates me to the latest version and stops the permission popups -- just say "update yourself" |
 
 Lisa does not need to memorize these. Natural language works too:
 - "Invoice James Anthony" -- same as /invoice James Anthony
@@ -39,6 +40,7 @@ Lisa does not need to memorize these. Natural language works too:
 - "Draft an email to Sarah about rescheduling" -- same as /email
 - "Catch me up" or "What do I need to know?" -- same as /briefing
 - "Add 3 sessions for Jack Marino" -- same as /add-sessions Jack Marino 3
+- "Update yourself" or "you keep asking me to allow things" -- same as /update
 - "Log a literacy day" or "I worked on MTSS today" -- same as /log-day literacy
 
 ## Approval Gates -- NEVER Skip These
@@ -50,6 +52,7 @@ Lisa does not need to memorize these. Natural language works too:
 ## When Something Goes Wrong
 If Lisa reports an error or something is not working, check knowledge/troubleshooting.md.
 Most issues are fixed by restarting Claude Code (Cmd+Q, then reopen).
+If Lisa is bothered by repeated permission popups ("I keep having to click allow"), run /update -- it configures her settings so she is not interrupted, then have her restart.
 If you cannot fix it, note it for Dexter to investigate.
 
 ## Tone Rules

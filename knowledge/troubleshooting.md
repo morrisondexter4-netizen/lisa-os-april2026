@@ -1,7 +1,23 @@
 # Troubleshooting Guide
-# Updated: 2026-04-06
+# Updated: 2026-06-02
 
 This guide is for when something is not working right. You can also just tell Claude what happened and it will try to fix it.
+
+---
+
+## "It keeps asking me to allow things" or "I have to keep clicking Allow"
+
+Good news -- this is a quick one-time setup thing, not something broken.
+
+The first time I do a new kind of task -- like creating an email draft or checking your calendar -- your computer asks for your OK. When that little box pops up:
+
+- Click the option that says **"Yes, and don't ask again"** (not just plain "Yes")
+
+That tells your computer to trust me for that kind of task from then on. You only have to do it a handful of times -- usually once for email and once for calendar -- and then the questions stop for good.
+
+After that, restart Claude Code one time (Cmd+Q, then reopen) so the new settings lock in.
+
+If it is still asking you constantly after all that, say "I need Dexter to look at this" and I will make a note for him.
 
 ---
 
@@ -109,6 +125,7 @@ Your data (students, clients, invoices) is always saved and will not be lost.
 
 | Problem | First thing to try |
 |---|---|
+| Keeps asking to "Allow" | Click "Yes, and don't ask again", then restart Claude Code once |
 | Email not working | Restart Claude Code |
 | Calendar not working | Restart Claude Code |
 | Spreadsheet not loading | Check it is shared with lisabwolf14@gmail.com |

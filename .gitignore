@@ -1,0 +1,8 @@
+# Machine-local Claude Code permission config.
+# Generated/merged per-install by hooks/apply-permissions.sh (via /update).
+# Kept untracked so updates never collide with a client's local settings.
+.claude/settings.json
+.claude/settings.local.json
+
+# Per-install version marker (written by /setup and /update).
+.installed-version
