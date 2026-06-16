@@ -35,6 +35,9 @@ Warm, plain English:
 >
 > After that, the very first time I create an email draft or check your calendar, your computer may ask permission once. Just click the option that says "Yes, and don't ask again." Do that once for email and once for calendar and you will never be asked again. Then your invoices and everything else will run nice and fast.
 
+Then mention what is new (keep it short and warm):
+> Two new things in this version: setup is now quick, about 5 minutes, just say "setup" whenever you have a moment. And you have a visual dashboard now. Once you have restarted, say "show my dashboard" to see Brightlings, your travel clients, and your Harborfields days all in one place.
+
 ---
 
 ## Rules
