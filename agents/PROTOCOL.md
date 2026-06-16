@@ -32,6 +32,7 @@ All drafts created here. Lisa reviews and sends.
 | /clients | skills/clients/SKILL.md | Travel clients by status |
 | /students | skills/students/SKILL.md | Brightlings student roster |
 | /schedule | skills/schedule/SKILL.md | Upcoming schedule + calendar |
+| /dashboard | skills/dashboard/SKILL.md | Visual dashboard of all three businesses (opens in browser) |
 | /help | skills/help/SKILL.md | All commands and examples |
 
 ## Approval Gates -- NEVER skip

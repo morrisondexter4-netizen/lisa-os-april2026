@@ -22,7 +22,7 @@ Or natural language: "Help", "What can you do?", "Show me the commands", "What a
 > ---
 >
 > **Getting Started**
-> - **/setup** -- Walk through first-time setup: connect your email, calendar, and enter all your business details. Run this if anything needs to be reconfigured.
+> - **/setup** -- Quick 5-minute setup: connects your email and calendar, confirms your three businesses, and opens your dashboard. Extra detail is optional and can be added anytime.
 >
 > ---
 >
@@ -32,6 +32,9 @@ Or natural language: "Help", "What can you do?", "Show me the commands", "What a
 >
 > - **/recap** -- Weekly health check across all three businesses. Shows what happened, what is coming up, and what needs attention. Includes a money snapshot.
 >   Example: "Give me a recap" or "How are things looking?"
+>
+> - **/dashboard** -- Opens a visual dashboard in your browser: your students, travel clients, Harborfields days this month, and invoices, all on one page.
+>   Example: "Show my dashboard" or "Refresh my dashboard"
 >
 > ---
 >

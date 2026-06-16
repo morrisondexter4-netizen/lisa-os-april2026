@@ -5,6 +5,25 @@
 LISA_OS_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
 
+# Version check -- detect updates and prompt for setup
+CURRENT_VERSION=""
+INSTALLED_VERSION=""
+if [ -f "$LISA_OS_DIR/VERSION" ]; then
+  CURRENT_VERSION=$(cat "$LISA_OS_DIR/VERSION")
+fi
+if [ -f "$LISA_OS_DIR/.installed-version" ]; then
+  INSTALLED_VERSION=$(cat "$LISA_OS_DIR/.installed-version")
+fi
+
+if [ "$CURRENT_VERSION" != "$INSTALLED_VERSION" ]; then
+  echo ""
+  echo "Good news, I just got an update. Setup is quicker now (about 5 minutes), and you have a new visual dashboard."
+  echo ""
+  echo "Say /setup for the quick run-through, or /dashboard to see everything at a glance. Or just ask me anything."
+  echo ""
+  exit 0
+fi
+
 # Get day of week and date for greeting
 DAY_OF_WEEK=$(date +%A)
 MONTH_DAY=$(date +"%B %-d")
@@ -151,6 +170,6 @@ if [ "$HAS_ITEMS" = false ]; then
 fi
 
 echo ""
-echo "Tip: Check your calendar and say /briefing for a full rundown, or /recap for the weekly view."
-echo "Try: /help, /students, /add-sessions, /log-day, /schedule"
+echo "Tip: Say /dashboard to see everything at a glance, /briefing for a full rundown, or /recap for the weekly view."
+echo "Try: /help, /dashboard, /students, /add-sessions, /log-day, /schedule"
 echo ""

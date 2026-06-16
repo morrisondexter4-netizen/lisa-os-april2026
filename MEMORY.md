@@ -1,6 +1,6 @@
 # LisaOS Memory -- Lisa Wolf
 # Volatile state only. Auto-managed. Target < 60 lines.
-# Updated: 2026-04-06
+# Updated: 2026-06-15
 
 ## Gmail Hub
 - Central email: lisabwolf14@gmail.com (connected via Gmail MCP)
@@ -27,11 +27,11 @@
 - Still needed from Lisa: district contact name, billing contacts per vertical
 
 ## Setup Status
+- v2.1 (2026-06-15): simpler 5-minute /setup (test-first connections, confirm-don't-interrogate, optional deep dive) + new /dashboard (visual view, opens in browser via scripts/build-dashboard.mjs, no new permissions)
 - Setup call with Lisa: happened 2026-04-06
 - MCPs still pending on Lisa's machine (Gmail, Calendar need connection)
-- Invoice format fix applied in v2.0
-- Student data fields added (subjects, sessionsOwed, lastInvoiced)
-- Next: run /setup on Lisa's machine to connect MCPs and fill remaining data
+- Student data fields present (subjects, sessionsOwed, lastInvoiced); detail filled via optional deep dive in /setup
+- Next: Lisa runs /update, then /setup (fast path) to connect MCPs and see her dashboard
 
 ## Gotchas
 - Never send email -- Gmail drafts only, Lisa sends manually

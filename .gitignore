@@ -6,3 +6,6 @@
 
 # Per-install version marker (written by /setup and /update).
 .installed-version
+
+# Generated per-machine from Lisa's current data by /dashboard.
+dashboard.html

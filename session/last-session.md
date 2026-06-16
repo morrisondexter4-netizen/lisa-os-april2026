@@ -1,27 +1,20 @@
-# Last Session -- 2026-04-06
+# Last Session -- 2026-06-15
 <!-- Max 20 lines. Overwrite every session end. -->
 
 ## Where We Left Off
-LisaOS v2.0 overhaul complete. All 9 phases executed: knowledge files fleshed out, students.json schema updated, CLAUDE.md rewritten, 9 slash command skills built, all agents improved, hooks rewritten, MEMORY.md updated, stale files deleted, PROTOCOL.md updated.
+LisaOS v2.1 shipped: simpler setup + a real visual dashboard. Pushed to origin; Lisa needs to run /update then /setup.
 
 ## Done This Session
-- Fleshed out all 5 knowledge files (tutoring, travel, harborfields, troubleshooting, invoice-formats)
-- Added subjects, sessionsOwed, lastInvoiced fields to students.json
-- Rewrote CLAUDE.md (warm, under 80 lines, all commands listed)
-- Built 9 skills: /setup, /invoice, /invoice-harborfields, /email, /recap, /clients, /students, /schedule, /help
-- Rewrote agents/claude.md with skill routing, error handling, troubleshooting
-- Deleted stale agents: lisa.md, travel-invoices.md
-- Improved all remaining agents with skill routing and error handling
-- Rewrote hooks (warm greetings, no technical output)
-- Updated PROTOCOL.md with all new slash commands
-- Deleted setup.sh (replaced by /setup skill)
+- New /dashboard command: scripts/build-dashboard.mjs builds + opens a self-contained dashboard.html from her live data (students, travel, Harborfields days, invoices). No new permissions, no popups.
+- Rewrote /setup as a ~5-minute fast path: tests connections first, confirms businesses instead of interrogating, permissions auto-handled, ends by opening the dashboard. Detailed questions are now an optional deep dive.
+- Wired /dashboard through CLAUDE.md, agents/claude.md, PROTOCOL.md, /help, and the startup hook.
+- Fixed latent bug: VERSION was never git-tracked, so update prompts never propagated. Now tracked. Bumped 2.0 -> 2.1.
 
 ## Blockers / Flags
-- MCPs not yet connected on Lisa's machine (Gmail, Calendar)
-- Student data still needs: subjects, parentContact, sessionsOwed (via /setup)
-- Harborfields billing contacts still TBD (via /setup)
+- MCPs still not connected on Lisa's machine (Gmail, Calendar) -- the fast /setup walks her through it.
+- Travel clients, parent emails, PO numbers still empty -- filled via the optional deep dive or as she works.
 
 ## Next Steps (exact, in order)
-1. Run /setup on Lisa's machine to connect MCPs and fill remaining data
-2. Test each slash command end-to-end
-3. Verify Gmail MCP creates drafts correctly
+1. Lisa runs /update (pulls v2.1, applies permissions).
+2. Lisa runs /setup (fast path) -- connects MCPs, confirms businesses, sees dashboard.
+3. Watch for any first-run issues; the deep dive populates the rest.

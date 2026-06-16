@@ -26,6 +26,7 @@ Drafts are created here. Lisa reviews and sends.
 | /invoice-harborfields [vertical] | skills/invoice-harborfields/SKILL.md |
 | /email | skills/email/SKILL.md |
 | /briefing | skills/briefing/SKILL.md |
+| /dashboard | skills/dashboard/SKILL.md |
 | /recap | skills/recap/SKILL.md |
 | /add-sessions [student] [number] | skills/add-sessions/SKILL.md |
 | /log-day [vertical] | skills/log-day/SKILL.md |
@@ -41,6 +42,7 @@ Drafts are created here. Lisa reviews and sends.
 | "Harborfields", "district", "literacy", "MTSS", "sped" + invoice | skills/invoice-harborfields/SKILL.md |
 | "email", "draft", "write to" | skills/email/SKILL.md |
 | "briefing", "catch me up", "what do I need to know", "give me the rundown", "brief me" | skills/briefing/SKILL.md |
+| "dashboard", "show my dashboard", "visual view", "refresh my dashboard", "open my dashboard" | skills/dashboard/SKILL.md |
 | "recap", "weekly summary", "how are things looking", "health check" | skills/recap/SKILL.md |
 | "add sessions", "log sessions", "[number] sessions for [student]", "[student] had [N] sessions" | skills/add-sessions/SKILL.md |
 | "log day", "consulting day", "worked on literacy today", "half day for MTSS", "log a [vertical] day" | skills/log-day/SKILL.md |
